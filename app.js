@@ -34,10 +34,8 @@ app.use(cors());
 
 // Endpoint for /magic8ball that returns a random response
 app.get('/', (req, res) => {
-    if (req.query.question) {
-        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-        res.json({ answer: randomResponse });
-    }
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    res.json({ answer: randomResponse });
 });
 
 // Basic error handling middleware
