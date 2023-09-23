@@ -1,7 +1,5 @@
 const express = require('express');
-const helmet = require('helmet');
 const cors = require('cors');  // We'll need the 'cors' package for handling CORS.
-const validator = require('validator');
 const app = express();
 
 const dotenv = require('dotenv')
@@ -30,32 +28,14 @@ const responses = [
     'Very doubtful.'
 ];
 
-// Middleware to use Helmet for security
-app.use(helmet({
-    contentSecurityPolicy: false, // Disable CSP if it interferes w no-cors
-}));
-
 // Middleware to use CORS for all routes
 app.use(cors());
 
 // Endpoint for /magic8ball that returns a random response
 app.get('/', (req, res) => {
-
-    if (req.query.question) {
-        console.log('Got a question!')
-
-        // Sanitize the question
-        let question = req.query.question
-        question = validator.escape(question)
-        console.log(question)
-
-        // Generate a random response
-        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-        res.json({ answer: randomResponse }, () => {
-            console.log(`Sent a answer: \n${randomResponse}`)
-        });
-    }
-
+    console.log('Got a request!')
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    res.json({ answer: randomResponse });
 });
 
 // Basic error handling middleware
