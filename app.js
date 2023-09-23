@@ -4,7 +4,6 @@ const app = express();
 
 const dotenv = require('dotenv')
 dotenv.config()
-const PORT = process.env.PORT || 3000;
 
 const responses = [
     'It is Certain.',
@@ -44,7 +43,8 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
-// Start the server on port 3000
+// Start the server on the port gotten from .env
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });
