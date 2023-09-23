@@ -33,9 +33,11 @@ const responses = [
 app.use(cors());
 
 // Endpoint for /magic8ball that returns a random response
-app.get('/magic8ball', (req, res) => {
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-    res.json({ answer: randomResponse });
+app.get('/api', (req, res) => {
+    if (req.query.question) {
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        res.json({ answer: randomResponse });
+    }
 });
 
 // Basic error handling middleware
@@ -46,5 +48,5 @@ app.use((err, req, res, next) => {
 
 // Start the server on port 3000
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });
