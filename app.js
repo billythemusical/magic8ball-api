@@ -6,7 +6,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const responses = [
-    'It is Certain.',
+    'It is certain.',
     'It is decidedly so.',
     'Without a doubt.',
     'Yes definitely.',
