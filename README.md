@@ -2,7 +2,7 @@
 
 #### *A Simple CORS-Friendly Magic 8 Ball API*
 
-This API was created for my NYU IMA class [ReCode](https://billythemusical.github.io/recode-fa23) in the fall of 2023 in order to teach the Javascript concepts of `async` & `await` more easily using the `fetch` command. It is live (as of Sep 27, 2023) at https://lowspeedinternet.com:2999/.
+This API was created for my NYU IMA class [ReCode](https://billythemusical.github.io/recode-fa23) in the fall of 2023 in order to teach the Javascript concepts of `async` & `await` more easily using the `fetch` command. It is live (as of Sep 27, 2023) at http://lowspeedinternet.com:2999/.
 
 Typically, cross-origin `fetch` requests from the browser will be met with a CORS error if the server to which the request is being made does not return the request with the proper headers. There are [workarounds for this](https://cors-anywhere.herokuapp.com/), but they are tedious/tenuous.
 
@@ -21,7 +21,7 @@ The API will return an answer from the [Magic 8 Ball standard set](https://magic
 So a typical API call in Javascript might go like the following:
 ```js
 async function askQuestion (question) {
-    let apiUrl = "https://127.0.0.1:3000/?question="
+    let apiUrl = "http://127.0.0.1:3000/?question="
     let url = apiUrl + question
     const response = await fetch(url)
     const data = await response.json()
