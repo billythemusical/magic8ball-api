@@ -28,6 +28,7 @@ async function askQuestion (question) {
     const response = await fetch(url)
     const data = await response.json()
     console.log(data.answer)
+    // outputs "Better not tell you now."
 }
 ```
 ### Installation
