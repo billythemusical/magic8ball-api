@@ -2,11 +2,13 @@
 
 #### *A Simple CORS-Friendly Magic 8 Ball API*
 
-This API was created for my NYU IMA class [ReCode](https://billythemusical.github.io/recode-fa23) in the fall of 2023 in order to teach the Javascript concepts of `async` & `await` more easily using the `fetch` command. It is live (as of Sep 27, 2023) at http://lowspeedinternet.com:2999/.
+>This API was created for my NYU IMA class [ReCode](https://billythemusical.github.io/recode-fa23) in the fall of 2023 in order to teach the Javascript concepts of `async` & `await` more easily using the `fetch` command. You can see it running live at http://lowspeedinternet.com:2999/ (at least as of 9/27/2023).
 
-Typically, cross-origin `fetch` requests from the browser will be met with a CORS error if the server to which the request is being made does not return the request with the proper headers. There are [workarounds for this](https://cors-anywhere.herokuapp.com/), but they are tedious/tenuous.
+#### *Addressing the CORS Issue*  
 
-This server solution works by leveraging the `cors` package from `npm` to return the API request with the proper headers that will not trigger the CORS error. 
+Typically, cross-origin `fetch` requests in the browser will be met with a CORS error if the server to which the request is being made does not return the request with the proper headers. [Proxy workarounds](https://cors-anywhere.herokuapp.com/) for this weren't quite the solution I had hoped for.  
+
+This server-side solution works by leveraging the `cors` package from `npm` to return the API request with the proper headers that will not trigger the CORS error.  
 
 ### API Usage
 
